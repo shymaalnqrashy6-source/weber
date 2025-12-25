@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moe Editor | محرر المواقع الذكي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- 1. Activity Bar (Extreme Left) -->
+        <aside class="activity-bar">
+            <div class="top-icons">
+                <div class="icon active"><i class="far fa-file"></i></div>
+                <div class="icon"><i class="fas fa-search"></i></div>
+                <div class="icon"><i class="fas fa-code-branch"></i></div>
+                <div class="icon"><i class="fas fa-th-large"></i></div>
+            </div>
+            <div class="bottom-icons">
+                <div class="icon"><i class="far fa-user-circle"></i></div>
+                <div class="icon"><i class="fas fa-cog"></i></div>
+            </div>
+        </aside>
+
+        <!-- 2. Sidebar (Explorer) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">EXPLORER: MOE PROJECT</div>
+            <div class="explorer-section">
+                <div class="section-title"><i class="fas fa-chevron-down"></i> MOE-EDITOR</div>
+                <div class="file active"><i class="fas fa-file-code"></i> main.moe</div>
+                <div class="file"><i class="fab fa-css3-alt"></i> styles.css</div>
+                <div class="file"><i class="fab fa-js"></i> script.js</div>
+            </div>
+        </aside>
+
+        <!-- 3. Main Content Area -->
+        <div class="main-wrapper">
+            <header class="editor-header">
+                <div class="tabs">
+                    <div class="tab active">
+                        <i class="fas fa-file-code"></i>
+                        <span>main.moe</span>
+                        <i class="fas fa-times close-tab"></i>
+                    </div>
+                    <div class="tab">
+                        <span>styles.css</span>
+                    </div>
+                </div>
+                <div class="editor-actions">
+                    <button id="run-btn"><i class="fas fa-play"></i> Run</button>
+                    <button class="icon-btn"><i class="fas fa-columns"></i></button>
+                    <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+            </header>
+
+            <main>
+                <div class="editor-container">
+                    <textarea id="code-editor" spellcheck="false" placeholder="اكتب أوامر Moe هنا..."></textarea>
+                </div>
+
+                <div class="preview-container">
+                    <div class="preview-header">
+                        <i class="fas fa-globe"></i>
+                        <span>Browser Preview</span>
+                        <div class="url-bar">http://localhost:3000/preview</div>
+                    </div>
+                    <iframe id="preview-frame"></iframe>
+                </div>
+            </main>
+
+            <!-- 4. Status Bar -->
+            <footer class="status-bar">
+                <div class="status-left">
+                    <div class="status-item bg-blue"><i class="fas fa-code-branch"></i> main</div>
+                    <div class="status-item"><i class="fas fa-sync"></i> Syncing...</div>
+                </div>
+                <div class="status-right">
+                    <div id="line-counter" class="status-item">Ln 1, Col 1</div>
+                    <div class="status-item">Spaces: 4</div>
+                    <div class="status-item">UTF-8</div>
+                    <div class="status-item">Moe Language</div>
+                    <div class="status-item"><i class="far fa-bell"></i></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="compiler.js"></script>
+    <script src="preview.js"></script>
+    <script src="editor.js"></script>
+</body>
+
+</html>
